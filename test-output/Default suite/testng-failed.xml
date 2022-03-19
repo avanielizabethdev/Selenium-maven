@@ -5,9 +5,10 @@
     <classes>
       <class name="testcases.LoginTest">
         <methods>
-          <include name="LoginSuccessTest"/>
           <include name="TearDown"/>
+          <include name="LoginFailiureTest"/>
           <include name="SetUp"/>
+          <include name="ParamererizedTest"/>
           <include name="DataSetUP"/>
           <include name="DataTearDown"/>
         </methods>

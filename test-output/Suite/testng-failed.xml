@@ -7,9 +7,11 @@
     <classes>
       <class name="testcases.LoginTest">
         <methods>
+          <include name="LoginSuccessTest"/>
           <include name="TearDown"/>
-          <include name="ExternalDataTest"/>
+          <include name="LoginFailiureTest"/>
           <include name="SetUp"/>
+          <include name="ParamererizedTest" invocation-numbers="0"/>
           <include name="DataTearDown"/>
           <include name="DataSetUP"/>
         </methods>

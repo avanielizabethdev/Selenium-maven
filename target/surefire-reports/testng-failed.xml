@@ -9,7 +9,6 @@
         <methods>
           <include name="TearDown"/>
           <include name="LoginFailiureTest"/>
-          <include name="ExternalDataTest"/>
           <include name="SetUp"/>
           <include name="DataTearDown"/>
           <include name="DataSetUP"/>

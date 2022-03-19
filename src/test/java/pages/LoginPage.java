@@ -14,70 +14,50 @@ import testcases.BaseClass;
 
 public class LoginPage {
 	
-	WebDriver driver = BaseClass.driver; //point driver to the base class driver. make sure driver class in base class is public static
+	WebDriver driver = BaseClass.driver;
+	ExtentTest test = BaseClass.test;
 	
-	ExtentTest test = BaseClass.test; //generate report
+	//========================= Web Elements ======================
 	
-	//=================================Web Elements===============================
-	
-	@FindBy(className="login")
+	@FindBy(className = "login")
 	WebElement LoginLink;
 	
-	@FindBy(name="user_login")
+	@FindBy(name = "user_login")
 	WebElement UserName;
 	
-	@FindBy(id="password")
+	@FindBy(id = "password")
 	WebElement Password;
 	
-	@FindBy(name="btn_login")
+	@FindBy(name = "btn_login")
 	WebElement LoginBtn;
 	
-	@FindBy(className="rememberMe")
+	@FindBy(className = "rememberMe")
 	WebElement RememberMe;
 	
-	
-	//assign all the values to the driver
-	
 	public LoginPage() {
+		
 		PageFactory.initElements(driver, this);
 	}
 	
-	//===================================Functions===============================
+	
+	//========================= Functions =============================
 	
 	public void LoginFunction(String UserNameVal, String PasswordVal) {
 		
-				
-		//WebElement LoginLink = driver.findElement(By.linkText("Log in"));
-		
 		LoginLink.click();
-		test.log(LogStatus.PASS, "Click on Login link","Login link clicked successfully");
+		test.log(LogStatus.PASS, "Click on Login Link", "Login link clicked successfully");
 		
-		/*
-		WebElement UserName = driver.findElement(By.name("user_login"));
-		WebElement Password = driver.findElement(By.id("password"));
-		WebElement LoginBtn = driver.findElement(By.name("btn_login"));
-		WebElement RememberMe= driver.findElement(By.className("rememberMe"));
-		*/
-				
 		UserName.sendKeys(UserNameVal);
-		test.log(LogStatus.PASS, "Enter user name","name entered successfully");
+		test.log(LogStatus.PASS, "Enter USerNAme", "Name Entered successfully");
 		
 		Password.sendKeys(PasswordVal);
-		test.log(LogStatus.PASS, "Enter password","password entered successfully");
+		test.log(LogStatus.PASS, "Enter Password", "Password Entered successfully");
 		
 		RememberMe.click();
-		test.log(LogStatus.PASS, "Click on Remember me","Clicked successfully");
+		test.log(LogStatus.PASS, "Click on Remember Me", " clicked successfully");
 		
 		LoginBtn.click();
-		test.log(LogStatus.PASS, "Click on Login Button","Login button clicked successfully");
-		
+		test.log(LogStatus.PASS, "Click on Login button", "Login button clicked successfully");
 	}
 	
-	//to verify multiple declaration
-	public void UICheck() {
-		
-		//WebElement UserName = driver.findElement(By.name("user_login"));
-		Assert.assertTrue(UserName.isDisplayed());
-	}
-
 }

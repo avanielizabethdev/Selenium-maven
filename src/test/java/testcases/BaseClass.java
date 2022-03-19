@@ -59,7 +59,7 @@ public static WebDriver driver;
 		
 		driver.get("https://www.simplilearn.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+		driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 		
 		
 	}
